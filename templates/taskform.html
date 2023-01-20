@@ -1,0 +1,22 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width",
+    initial-scale="1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/style.css" %}">
+</head>
+<div class="task-form">
+<h2> Task Form </h2>
+
+    <div class="task-styling">
+<form action="" method="post">
+    {% csrf_token %}
+     {{ form.as_p }}
+    <br>
+    <input type="submit" value="Save Task">
+</form>
+        &nbsp; &nbsp; <a href=" {% url 'tasklist' %}"> Go Back</a>
+</div>
+</div>

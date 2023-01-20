@@ -1,0 +1,23 @@
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width",
+    initial-scale="1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/style.css" %}">
+</head>
+
+<div class="task-form">
+    <div class="task-styling">
+<form action="" method="post">
+   {% csrf_token %}
+    <br>
+    <p> Are you sure you want to delete this task? {{item.tittle}}</p>
+    <br>
+    <input type="submit" value="Yes, Delete">
+    <button> <a href="{% url  "tasklist" %}"> No, Go back</a></button>
+</form>
+    </div>
+</div>
