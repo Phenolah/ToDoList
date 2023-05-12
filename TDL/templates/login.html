@@ -1,0 +1,29 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width",
+    initial-scale="1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/style.css" %}">
+</head>
+
+<h3> Login Page </h3>
+<div class="login">
+    <div class="login Form">
+<form  class='form-styling' action="" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+                       {{field.label}}
+                       {{field}}
+                       <br>
+                       <br>
+    {% endfor %}
+    <br>
+    <input type="submit" value="Log in">
+    <br>
+    <br>
+    <p>Don't have an account?<a href="{% url 'register' %}"> Sign up</a></p>
+</form>
+</div>
+    </div>

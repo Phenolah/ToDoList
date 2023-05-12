@@ -1,0 +1,42 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width",
+    initia  l-scale="1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/style.css" %}">
+</head>
+
+<body>
+<div class="task-form">
+<h1> Registration Form </h1>
+<br>
+<br>
+<br>
+    <div class="task-styling">
+<form action="" method="post">
+    {% csrf_token %}
+    <td>
+    <label> {{form.username.label }}</label>
+        <br>
+    {{form.username }}
+        <br>
+    <label> {{form.password1.label }}</label>
+        <br>
+    {{form.password1 }}
+        <br>
+    <label> {{form.password2.label }}</label>
+        <br>
+    {{form.password2 }}
+    </td>
+    <br>
+    <br>
+    <input type="submit" value="Register">
+    <br>
+    &nbsp;
+    <p>Already have an account?<a href="{% url 'login' %}"> login</a></p>
+</form>
+</div>
+    </div>
+</body>

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+{% if request.user.is_authenticated %}
+
+<button class="logout"> <a href="{% url 'logout' %}">Logout</a> </button>
+{% else %}
+<a href=" {% url "login" %}"> Login</a>
+<a href=""> Sign up</a>
+{% endif %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width",
+    initia  l-scale="1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/style.css" %}">
+</head>
+<body>
+<div class="header-bar">
+    <div>
+        <h1> Hello {{request.user}} </h1>
+        <h3> You have <i> {{count}} incomplete task{{count|pluralize}}</i></h3>
+    </div>
+
+</div>
+<header>
+    <br>
+    <br>
+    <br>
+    <h1>ToDoList 2023</h1>
+    <form id="new-task-form" method="get">
+        <input type="text" id="new-task-input" placeholder="What are your 2023 plans"  name="search-area">
+        <button type="submit" id="search" >Search</button>
+</form>
+
+</header>
+
+<section class="goal-list">
+    <h2>Tasks</h2>
+    <br>
+    {% for task in tasks %}
+
+    <div id="task">
+        <div class="task">
+            <div class="content">
+                 <input type="checkbox" id="{{ task.id }}" class="checkbox"  />
+                <label for="{{ task.id }}">&nbsp;</label>
+                <input type="text" class="text" value="{{task.tittle}}" readonly />
+            </div>
+            <div class="actions">
+                <button type="submit" id="new-task-add"><a href="{% url 'create'  %}">Add</a></button>
+                <button class="Add"> <a  href="{% url "update" task.id %}">  Update </a> </button>
+                <button class="delete" id="task-delete"> <a  href="{% url "delete" task.id %}"> Delete </a> </button>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <br>
+    <h3> No tasks in ToDoList </h3>
+    <br>
+    <button type="submit" id="new-list-submit"><a href="{% url 'create'  %}">Add task</a></button>
+    {% endfor %}
+</section>
+</body>
+</html>
