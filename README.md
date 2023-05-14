@@ -15,13 +15,14 @@ Techstack
 CSS5
 HTML3
 Django
-Key Features
 
-Adding a new task
-Delete the selected task
-Search for a specific task
-Edit a task
-Shows incomplete tasks
+Key Features:
+
+- Adding a new task
+- Delete the selected task
+- Search for a specific task
+- Edit a task
+- Shows incomplete tasks
 
 
 ![Screenshot (33)](https://github.com/Phenolah/ToDoList/assets/104977409/6d5152e2-328b-4fee-b07a-58e57809bc5a)
